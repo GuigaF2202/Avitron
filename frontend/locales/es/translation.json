@@ -6,9 +6,9 @@
       "3": "Evolución con adaptación y fusión.",
       "4": "Ciudades escritas en código y memoria electrónica."
     },
-    "viewerInfo": "Explorando los límites entre tecnología y humanidad en una estética cyberpunk futurista.",
+    "viewerInfo": "Explorando los límites entre tecnología y humanidad en una estética AviTron Multiverse.",
     "navigation": "Usa las flechas ← → para navegar",
-    "title": "Galería Cyberpunk",
+    "title": "Galería AviTron Multiverse",
     "subtitle": "Explorando los límites entre tecnología y humanidad a través de imágenes",
     "clickToExpand": "Clic para expandir"
   },
@@ -225,7 +225,8 @@
   },
   "homePage": {
     "scrollToGallery": "Desplazar a la Galería",
-    "galleryTitle": "Galería de Imágenes"
+    "galleryTitle": "Galería de Imágenes",
+    "newsletterTitle" : "Suscribete"
   },
   "language": {
     "en": "Inglés",
@@ -254,7 +255,7 @@
       "title": "Categorías"
     },
     "products": {
-      "avatar1": "Avatar Cyberpunk",
+      "avatar1": "Avatar AviTron Multiverse",
       "clothing1": "Traje Digital",
       "home1": "Casa Futurista"
     },
@@ -362,43 +363,77 @@
   "app": {
     "mainContent": "Contenido principal"
   },
-  "pricing": {
-    "title": "Precios",
-    "headline": "Ya sea para ti o para todo tu equipo, tenemos la solución perfecta.",
-    "subtitle": "Elige el producto que mejor funcione para ti",
-    "mostPopular": "Más popular",
-    "orderNow": "Comprar Ahora",
-    "products": {
-      "1": {
-        "name": "Producto Tipo 1",
-        "description": "Detalles del Producto Tipo 1",
-        "price": "€ 10 / unidad",
-        "features": [
-          "40 unidades",
-          "1 característica",
-          "Entrega rápida"
-        ]
+  
+    "pricing": {
+      "title": "Seleccione su Plan en el Universo Virtual",
+      "headline": "Personalice su experiencia digital con nuestras opciones flexibles de precios",
+      "premiumMembership": {
+        "title": "🌟 Membresía Premium",
+        "benefits": {
+          "trons": "✅ 400 trons/semana (1600/mes)",
+          "island": "🌴 10.000 PRIMs isla (65.536 m²)",
+          "support": "🛠️ Soporte VIP",
+          "perks": "🎁 Ventajas y bonificaciones exclusivas"
+        },
+        "month": "mes"
       },
-      "2": {
-        "name": "Producto Tipo 2",
-        "description": "La elección más popular. Detalles del Producto Tipo 2",
-        "price": "€ 20 / unidad",
-        "features": [
-          "120 unidades",
-          "3 características diferentes",
-          "Entrega rápida"
-        ]
+      "tronEconomy": {
+        "title": "Economía de Trons en el Mundo Virtual",
+        "exchangeRate": "275 Trons = $1 USD",
+        "uses": "Usos: Comprar bienes, alquilar servicios, recompensar creadores, mejorar terrenos",
+        "premium": "Los usuarios premium reciben 400 trons por semana automáticamente (1600/mes)"
       },
-      "3": {
-        "name": "Producto Tipo 3",
-        "description": "Detalles del Producto Tipo 3",
-        "price": "€ 50 / unidad",
-        "features": [
-          "240 unidades",
-          "6 características diferentes",
-          "Entrega rápida"
-        ]
+      "buttons": {
+        "subscribe": "Suscribirse Ahora",
+        "purchase": "Comprar",
+        "purchaseTrons": "Comprar Trons"
+      },
+      "islandUpgrades": {
+        "title": "🧱 Mejoras de Isla",
+        "subtitle": "Complementos Mensuales",
+        "columns": {
+          "tier": "Nivel de Región",
+          "prims": "PRIMs Máximos",
+          "price": "Precio Mensual",
+          "action": "Acción"
+        },
+        "tiers": {
+          "included": "Incluido",
+          "tier1": "Expansión Nivel 1",
+          "tier2": "Expansión Nivel 2",
+          "tier4x4": "Actualización a Región 4x4",
+          "includedWithPremium": "Incluido con Premium"
+        }
+      },
+      "extraRegions": {
+        "title": "🪐 Regiones Extra",
+        "subtitle": "Adiciones Opcionales",
+        "types": {
+          "basic": "Isla Básica",
+          "medium": "Isla Media",
+          "large": "Isla Grande",
+          "mega": "Mega Región 4x4"
+        },
+          "newsletter": {
+            "title": "Mantente Actualizado",
+            "description": "¡Mantente al día con AviTron Multiverse! Únete a nuestra lista de correo para recibir actualizaciones selectas y relevantes.",
+            "emailLabel": "Dirección de correo electrónico",
+            "emailPlaceholder": "Introduce tu correo electrónico",
+            "button": "Notifícame"
+          }
+        },
+      "columns": {
+        "type": "Tipo de Región",
+          "prims": "PRIMs Máximos",
+          "price": "Precio Mensual",
+           "setupFee": "Tarifa de Configuración Única",
+           "action": "Acción"
+}
+      },
+      "callToAction": {
+        "title": "¿Listo para Unirse al Multiverso?",
+        "description": "Comience su aventura digital hoy con nuestra Membresía Premium",
+        "button": "Empezar Ahora"
       }
     }
-  }
-}
+  

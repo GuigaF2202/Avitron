@@ -6,9 +6,9 @@
       "3": "Evolution with adaptation and fusion.",
       "4": "Cities written in code and electronic memory."
     },
-    "viewerInfo": "Exploring the boundaries between technology and humanity in a futuristic cyberpunk aesthetic.",
+    "viewerInfo": "Exploring the boundaries between technology and humanity in a futuristic AviTron Multiverse.",
     "navigation": "Use ← → arrows to navigate",
-    "title": "Cyberpunk Gallery",
+    "title": "AviTron Multiverse Gallery",  
     "subtitle": "Exploring the boundaries between technology and humanity through images",
     "clickToExpand": "Click to expand"
   },
@@ -17,7 +17,7 @@
       "success": "Login successful!",
       "error": "Invalid email or password",
       "title": "Sign In",
-      "subtitle": "Access the Avitron Metaverse",
+      "subtitle": "Access the Avitron Multiverse",
       "processing": "Connecting...",
       "button": "Sign In"
     },
@@ -100,12 +100,12 @@
       "days": "days"
     },
     "sectionUnderDevelopment": "Under Development",
-    "sectionComingSoon": "This section will be available soon. We are working to bring new features to the Avitron Metaverse.",
+    "sectionComingSoon": "This section will be available soon. We are working to bring new features to the Avitron Multiverse.",
     "backToHome": "Back to Home"
   },
   "downloads": {
     "title": "Download Avitron",
-    "subtitle": "Start your journey in the metaverse",
+    "subtitle": "Start your journey in the Multiverse",
     "versions": {
       "title": "Available Versions",
       "size": "Size",
@@ -225,7 +225,8 @@
   },
   "homePage": {
     "scrollToGallery": "Scroll to Gallery",
-    "galleryTitle": "Image Gallery"
+    "galleryTitle": "Image Gallery",
+    "newsletterTitle" : "Keep Updated"
   },
   "language": {
     "en": "English",
@@ -254,7 +255,7 @@
       "title": "Categories"
     },
     "products": {
-      "avatar1": "Cyberpunk Avatar",
+      "avatar1": "AviTron Avatar",
       "clothing1": "Digital Suit",
       "home1": "Futuristic Home"
     },
@@ -292,7 +293,7 @@
       "usernameResident": "Last name not provided. \"Resident\" will be added automatically."
     },
     "title": "Create Account",
-    "subtitle": "Join the Avitron metaverse",
+    "subtitle": "Join the Avitron Multiverse",
     "avatar": {
       "title": "Choose your Avatar",
       "required": "Please select an avatar"
@@ -362,43 +363,78 @@
   "app": {
     "mainContent": "Main content"
   },
-  "pricing": {
-    "title": "Pricing",
-    "headline": "Whether for you or your entire team, we have the perfect solution.",
-    "subtitle": "Choose the product that works best for you",
-    "mostPopular": "Most popular",
-    "orderNow": "Order Now",
-    "products": {
-      "1": {
-        "name": "Product Type 1",
-        "description": "Product Type 1 Details",
-        "price": "€ 10 / unit",
-        "features": [
-          "40 units",
-          "1 feature",
-          "Fast delivery"
-        ]
+  
+    "pricing": {
+      "title": "Select Your Virtual Universe Plan",
+      "headline": "Customize your digital experience with our flexible pricing options",
+      "premiumMembership": {
+        "title": "🌟 Premium Membership",
+        "benefits": {
+          "trons": "✅ 400 trons/week (1600/month)",
+          "island": "🌴 10,000 PRIMs island (65,536 sqm)",
+          "support": "🛠️ VIP Support",
+          "perks": "🎁 Exclusive perks and bonuses"
+        },
+        "month": "month"
       },
-      "2": {
-        "name": "Product Type 2",
-        "description": "The most popular choice. Product Type 2 Details",
-        "price": "€ 20 / unit",
-        "features": [
-          "120 units",
-          "3 different features",
-          "Fast delivery"
-        ]
+      "tronEconomy": {
+        "title": "In-World Tron Economy",
+        "exchangeRate": "275 Trons = $1 USD",
+        "uses": "Uses: Buy goods, rent services, tip creators, upgrade lands",
+        "premium": "Premium users receive 400 trons per week automatically (1600/month)"
       },
-      "3": {
-        "name": "Product Type 3",
-        "description": "Product Type 3 Details",
-        "price": "€ 50 / unit",
-        "features": [
-          "240 units",
-          "6 different features",
-          "Fast delivery"
-        ]
+      "buttons": {
+        "subscribe": "Subscribe Now",
+        "purchase": "Purchase",
+        "purchaseTrons": "Purchase Trons"
+      },
+      "islandUpgrades": {
+        "title": "🧱 Island Upgrades",
+        "subtitle": "Monthly Add-Ons",
+        "columns": {
+          "tier": "Region Tier",
+          "prims": "Max PRIMs",
+          "price": "Monthly Price",
+          "action": "Action"
+        },
+        "tiers": {
+          "included": "Included",
+          "tier1": "Expansion Tier 1",
+          "tier2": "Expansion Tier 2",
+          "tier4x4": "4x4 Region Upgrade",
+          "includedWithPremium": "Included with Premium"
+        }
+      },
+      "extraRegions": {
+        "title": "🪐 Extra Regions",
+        "subtitle": "Optional Additions",
+        "types": {
+          "basic": "Basic Island",
+          "medium": "Medium Island",
+          "large": "Large Island",
+        "mega": "4x4 Mega Region"
+      },
+      "columns": {
+        "type": "Region Type",
+          "prims": "Max PRIMs",
+          "price": "Monthly Price",
+          "setupFee": "One-Time Setup Fee",
+          "action": "Action"
+        },
+        
+          "newsletter": {
+            "title": "Keep Updated",
+            "description": "Keep pace with AviTron Multiverse! Join our mailing list for selective, noteworthy updates.",
+            "emailLabel": "Email address",
+            "emailPlaceholder": "Enter your email",
+            "button": "Notify me"
+          }
+        }
+      },
+      "callToAction": {
+        "title": "Ready to Join the Multiverse?",
+        "description": "Begin your digital adventure today with our Premium Membership",
+        "button": "Get Started Now"
       }
     }
-  }
-}
+  

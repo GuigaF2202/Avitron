@@ -3,7 +3,7 @@
 const config = {
   apps: [{
     name: 'avitron-api',
-    script: 'server.js',
+    script: 'server.cjs',
     instances: 'max',
     exec_mode: 'cluster',
     autorestart: true,

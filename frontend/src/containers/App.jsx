@@ -6,12 +6,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
 import '../index.css';
-import { useTranslation } from 'react-i18next';
 
-
-function App() {
-  const { t } = useTranslation();
-
+const App = () => {
   return (
     <LanguageProvider>
       <div className="flex flex-col min-h-screen bg-black text-white overflow-x-hidden">

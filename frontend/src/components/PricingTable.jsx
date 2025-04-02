@@ -1,32 +1,35 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const PricingCards = () => {
+  const { t } = useTranslation();
+  
   // Premium membership details with 10% price increase
   const premiumMembership = {
-    title: '🌟 Premium Membership',
+    title: t('pricing.premiumMembership.title'),
     price: 18.36, // $15 increased by 10%
     benefits: [
-      '✅ 400 trons/week (1600/month)',
-      '🌴 10,000 PRIMs island (65,536 sqm)',
-      '🛠️ VIP Support',
-      '🎁 Exclusive perks and bonuses'
+      t('pricing.premiumMembership.benefits.trons'),
+      t('pricing.premiumMembership.benefits.island'),
+      t('pricing.premiumMembership.benefits.support'),
+      t('pricing.premiumMembership.benefits.perks')
     ]
   };
 
   // Island upgrades data with 10% price increase
   const islandUpgrades = [
-    { tier: 'Included', prims: '10,000', price: 'Free (w/ Premium)' },
-    { tier: 'Expansion Tier 1', prims: '20,000', price: 8.64 },
-    { tier: 'Expansion Tier 2', prims: '30,000', price: 18.36 },
-    { tier: '4x4 Region Upgrade', prims: '80,000', price: '$42,12 - $47,52' }
+    { tier: t('pricing.islandUpgrades.tiers.included'), prims: '10,000', price: 'Free (w/ Premium)' },
+    { tier: t('pricing.islandUpgrades.tiers.tier1'), prims: '20,000', price: 8.64 },
+    { tier: t('pricing.islandUpgrades.tiers.tier2'), prims: '30,000', price: 18.36 },
+    { tier: t('pricing.islandUpgrades.tiers.tier4x4'), prims: '80,000', price: '$42,12 - $47,52' }
   ];
 
   // Extra regions data with 10% price increase
   const extraRegions = [
-    { type: 'Basic Island', prims: '10,000', price: 7.56 },
-    { type: 'Medium Island', prims: '20,000', price: 15.12 },
-    { type: 'Large Island', prims: '30,000', price: 24.84 },
-    { type: '4x4 Mega Region', prims: '80,000', price: 48.60 }
+    { type: t('pricing.extraRegions.types.basic'), prims: '10,000', price: 7.56, setupFee: 5.50 },
+    { type: t('pricing.extraRegions.types.medium'), prims: '20,000', price: 15.12, setupFee: 5.50 },
+    { type: t('pricing.extraRegions.types.large'), prims: '30,000', price: 24.84, setupFee: 5.50 },
+    { type: t('pricing.extraRegions.types.mega'), prims: '80,000', price: 48.60, setupFee: 5.50 }
   ];
 
   return (
@@ -34,8 +37,8 @@ const PricingCards = () => {
 
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white">Select Your Virtual Universe Plan</h2>
-          <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">Customize your digital experience with our flexible pricing options</p>
+          <h2 className="text-3xl font-bold text-white">{t('pricing.title')}</h2>
+          <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">{t('pricing.headline')}</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
@@ -50,7 +53,7 @@ const PricingCards = () => {
             </h2>
             <div className="text-center mb-6">
               <span className="text-4xl font-extrabold text-white">${premiumMembership.price.toFixed(2)}</span>
-              <span className="text-gray-300 ml-2">/month</span>
+              <span className="text-gray-300 ml-2">/{t('pricing.premiumMembership.month')}</span>
             </div>
             <div className="border-t border-b border-[#292945] py-6 mb-6">
               <ul className="space-y-4">
@@ -62,7 +65,7 @@ const PricingCards = () => {
               </ul>
             </div>
             <button className="w-full bg-gradient-to-r from-[#00d8ff] to-[#00a8ff] hover:from-[#00c4e8] hover:to-[#0098e8] text-[#1f1f3a] font-bold py-3 rounded-lg transition-colors duration-300 shadow-lg">
-              Subscribe Now
+              {t('pricing.buttons.subscribe')}
             </button>
           </div>
 
@@ -71,41 +74,41 @@ const PricingCards = () => {
             <div className="h-20 w-20 mx-auto bg-gradient-to-br from-[#00d8ff] to-[#00a8ff] rounded-full flex items-center justify-center mb-6">
               <span className="text-3xl">⚖️</span>
             </div>
-            <h2 className="text-2xl font-bold text-center text-[#00d8ff] mb-4">In-World Tron Economy</h2>
+            <h2 className="text-2xl font-bold text-center text-[#00d8ff] mb-4">{t('pricing.tronEconomy.title')}</h2>
             <div className="text-center mb-6">
               <div className="bg-[#292945] rounded-lg p-4 mb-4">
-                <p className="text-2xl font-bold text-[#00d8ff]">275 Trons = $1 USD</p>
+                <p className="text-2xl font-bold text-[#00d8ff]">{t('pricing.tronEconomy.exchangeRate')}</p>
               </div>
             </div>
             <div className="border-t border-b border-[#292945] py-6 mb-6">
-              <p className="mb-3"><strong>Uses:</strong> Buy goods, rent services, tip creators, upgrade lands</p>
-              <p className="text-gray-300">Premium users receive 400 trons per week automatically (1600/month)</p>
+              <p className="mb-3">{t('pricing.tronEconomy.uses')}</p>
+              <p className="text-gray-300">{t('pricing.tronEconomy.premium')}</p>
             </div>
             <button className="w-full bg-gradient-to-r from-[#00d8ff] to-[#00a8ff] hover:from-[#00c4e8] hover:to-[#0098e8] text-[#1f1f3a] font-bold py-3 rounded-lg transition-colors duration-300 shadow-lg">
-              Purchase Trons
+              {t('pricing.buttons.purchaseTrons')}
             </button>
           </div>
         </div>
 
         <div className="text-center my-16">
-          <h2 className="text-3xl font-bold text-white">Expand Your Digital Universe</h2>
-          <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">Customize your experience with additional upgrades and regions</p>
+          <h2 className="text-3xl font-bold text-white">{t('pricing.title')}</h2>
+          <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">{t('pricing.headline')}</p>
         </div>
 
         {/* Island Upgrades Card */}
         <div className="bg-gradient-to-br from-[#1f1f3a] to-[#2a2a4a] rounded-xl p-8 shadow-xl border border-[#292945] transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,216,255,0.3)] mb-12">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-[#00d8ff]">🧱 Island Upgrades</h2>
-            <span className="text-sm bg-[#292945] py-1 px-3 rounded-full text-gray-300">Monthly Add-Ons</span>
+            <h2 className="text-2xl font-bold text-[#00d8ff]">{t('pricing.islandUpgrades.title')}</h2>
+            <span className="text-sm bg-[#292945] py-1 px-3 rounded-full text-gray-300">{t('pricing.islandUpgrades.subtitle')}</span>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
                 <tr>
-                  <th className="border-b-2 border-[#292945] p-4 text-left text-lg font-bold text-[#00d8ff]">Region Tier</th>
-                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">Max PRIMs</th>
-                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">Monthly Price</th>
-                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">Action</th>
+                  <th className="border-b-2 border-[#292945] p-4 text-left text-lg font-bold text-[#00d8ff]">{t('pricing.islandUpgrades.columns.tier')}</th>
+                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">{t('pricing.islandUpgrades.columns.prims')}</th>
+                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">{t('pricing.islandUpgrades.columns.price')}</th>
+                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">{t('pricing.islandUpgrades.columns.action')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -117,11 +120,11 @@ const PricingCards = () => {
                       {typeof upgrade.price === 'number' ? `$${upgrade.price.toFixed(2)}` : upgrade.price}
                     </td>
                     <td className="border-b border-[#292945] p-4 text-center">
-                      {upgrade.tier === 'Included' ? (
-                        <span className="text-gray-400">Included with Premium</span>
+                      {upgrade.tier === t('pricing.islandUpgrades.tiers.included') ? (
+                        <span className="text-gray-400">{t('pricing.islandUpgrades.tiers.includedWithPremium')}</span>
                       ) : (
                         <button className="bg-gradient-to-r from-[#00d8ff] to-[#00a8ff] hover:from-[#00c4e8] hover:to-[#0098e8] text-[#1f1f3a] font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
-                          Purchase
+                          {t('pricing.buttons.purchase')}
                         </button>
                       )}
                     </td>
@@ -135,17 +138,18 @@ const PricingCards = () => {
         {/* Extra Regions Card */}
         <div className="bg-gradient-to-br from-[#1f1f3a] to-[#2a2a4a] rounded-xl p-8 shadow-xl border border-[#292945] transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,216,255,0.3)]">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-[#00d8ff]">🪐 Extra Regions</h2>
-            <span className="text-sm bg-[#292945] py-1 px-3 rounded-full text-gray-300">Optional Additions</span>
+            <h2 className="text-2xl font-bold text-[#00d8ff]">{t('pricing.extraRegions.title')}</h2>
+            <span className="text-sm bg-[#292945] py-1 px-3 rounded-full text-gray-300">{t('pricing.extraRegions.subtitle')}</span>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
                 <tr>
-                  <th className="border-b-2 border-[#292945] p-4 text-left text-lg font-bold text-[#00d8ff]">Region Type</th>
-                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">Max PRIMs</th>
-                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">Monthly Price</th>
-                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">Action</th>
+                  <th className="border-b-2 border-[#292945] p-4 text-left text-lg font-bold text-[#00d8ff]">{t('pricing.extraRegions.columns.type')}</th>
+                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">{t('pricing.extraRegions.columns.prims')}</th>
+                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">{t('pricing.extraRegions.columns.price')}</th>
+                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">{t('pricing.extraRegions.columns.setupFee')}</th>
+                  <th className="border-b-2 border-[#292945] p-4 text-center text-lg font-bold text-[#00d8ff]">{t('pricing.extraRegions.columns.action')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -154,9 +158,10 @@ const PricingCards = () => {
                     <td className="border-b border-[#292945] p-4">{region.type}</td>
                     <td className="border-b border-[#292945] p-4 text-center">{region.prims}</td>
                     <td className="border-b border-[#292945] p-4 text-center">${region.price.toFixed(2)}</td>
+                    <td className="border-b border-[#292945] p-4 text-center">${region.setupFee.toFixed(2)}</td>
                     <td className="border-b border-[#292945] p-4 text-center">
                       <button className="bg-gradient-to-r from-[#00d8ff] to-[#00a8ff] hover:from-[#00c4e8] hover:to-[#0098e8] text-[#1f1f3a] font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
-                        Purchase
+                        {t('pricing.buttons.purchase')}
                       </button>
                     </td>
                   </tr>
@@ -168,12 +173,12 @@ const PricingCards = () => {
 
         {/* Call to Action */}
         <div className="mt-16 text-center py-10 bg-gradient-to-br from-[#1f1f3a] to-[#2a2a4a] rounded-xl border border-[#292945] shadow-xl">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Join the Multiverse?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t('pricing.callToAction.title')}</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Begin your digital adventure today with our Premium Membership
+            {t('pricing.callToAction.description')}
           </p>
           <button className="bg-gradient-to-r from-[#00d8ff] to-[#00a8ff] hover:from-[#00c4e8] hover:to-[#0098e8] text-[#1f1f3a] font-bold py-3 px-8 rounded-lg transition-colors duration-300 text-lg shadow-lg">
-            Get Started Now
+            {t('pricing.callToAction.button')}
           </button>
         </div>
       </div>

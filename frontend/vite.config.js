@@ -42,14 +42,26 @@ export default defineConfig(({ mode }) => {
           drop_console: mode === 'production'
         }
       },
-      assetsInclude: ['**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.svg', '**/*.webp', '**/*.gif']
+      assetsInclude: ['**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.svg', '**/*.webp', '**/*.gif'],
+      rollupOptions: {
+        external: [],  // Removendo react-country-flag dos externos
+        output: {
+          globals: {
+            'react-country-flag': 'ReactCountryFlag'
+          },
+          manualChunks: {
+            vendor: ['react-country-flag']
+          }
+        }
+      }
     },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
         '@components': path.resolve(__dirname, './src/components'),
         '@containers': path.resolve(__dirname, './src/containers'),
-        '@contexts': path.resolve(__dirname, './src/contexts')
+        '@contexts': path.resolve(__dirname, './src/contexts'),
+        'react-country-flag': 'react-country-flag/dist/index.js' // Adicionando resolução específica
       }
     },
     // Melhora feedback durante o desenvolvimento
@@ -58,6 +70,9 @@ export default defineConfig(({ mode }) => {
     // Adiciona suporte a HMR (Hot Module Replacement)
     hmr: {
       overlay: true,
+    },
+    optimizeDeps: {
+      include: ['react-country-flag']
     },
   }
 })

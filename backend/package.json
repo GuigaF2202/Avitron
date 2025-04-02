@@ -6,7 +6,8 @@
 "scripts": {
   "start": "node server.cjs",
   "dev": "nodemon server.cjs",
-  "setup-db": "psql -U postgres -f ../database/schema.sql"
+  "setup-db": "psql -U postgres -f ../database/schema.sql",
+  "pm2:dev:logs": "pm2 logs"
     },
     "keywords": [
         "metaverse",

@@ -167,6 +167,9 @@ const Header = () => {
 
           {/* Mobile Auth Buttons */}
           <div className="flex flex-col space-y-3 mt-6 pt-6 border-t border-[#00F0FF]/10">
+            <div className="mb-4">
+              <LanguageSelector />
+            </div>
             <Link
               to="/auth"
               className="cyberpunk-button w-full py-2 px-4 text-center"

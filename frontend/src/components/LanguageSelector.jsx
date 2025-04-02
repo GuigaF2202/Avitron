@@ -1,63 +1,69 @@
-import React from "react";
-import ReactCountryFlag from "react-country-flag";
-import { useLanguage } from "../contexts/LanguageContext";
-import { useTranslation } from "react-i18next";
-
-const LANGUAGE_OPTIONS = [
-  { code: "en", label: "EN", country: "US" },
-  { code: "pt", label: "PT", country: "BR" },
-  { code: "es", label: "ES", country: "ES" }
-];
+import React, { useState, useRef, useEffect } from 'react';
+import { MdOutlineLanguage } from 'react-icons/md';
+import { useTranslation } from 'react-i18next';
 
 const LanguageSelector = () => {
-  const { language, changeLanguage } = useLanguage();
-  const { t } = useTranslation();
+  const { i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-  const handleLanguageChange = async (lng) => {
-    try {
-      await changeLanguage(lng);
-    } catch (error) {
-      console.error(t('language.errors.changing'), error);
-    }
-  };
+  const languages = [
+    { code: 'en', label: 'English' },
+    { code: 'es', label: 'Español' },
+    { code: 'pt', label: 'Português' }
+  ];
 
-  const getLanguageLabel = (code) => {
-    switch (code) {
-      case 'en': return 'English';
-      case 'pt': return 'Português';
-      case 'es': return 'Español';
-      default: return code.toUpperCase();
-    }
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setIsOpen(false);
   };
 
   return (
-    <div className="flex space-x-2" role="group" aria-label={t('language.selector', 'Seletor de idiomas')}>
-      {LANGUAGE_OPTIONS.map(({ code, label, country }) => (
-        <button
-          key={code}
-          onClick={() => handleLanguageChange(code)}
-          className={`
-            p-2 rounded-md flex items-center space-x-1 transition-colors
-            ${language === code 
-              ? 'bg-gray-700 text-white' 
-              : 'bg-gray-800 hover:bg-gray-700 text-gray-300'
-            }
-          `}
-          aria-pressed={language === code}
-          title={t('language.change', 'Mudar para {{lang}}', { lang: getLanguageLabel(code) })}
-        >
-          <ReactCountryFlag
-            countryCode={country}
-            svg
-            aria-hidden="true"
-            style={{
-              width: '1.25em',
-              height: '1.25em'
-            }}
-          />
-          <span className="text-sm font-medium">{label}</span>
-        </button>
-      ))}
+    <div className="relative" ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center space-x-2 p-2 rounded-md hover:bg-[#00F0FF]/10 text-[#00F0FF] transition-colors"
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        <MdOutlineLanguage className="text-xl" />
+        <span className="text-sm font-medium">{i18n.language.toUpperCase()}</span>
+      </button>
+
+      {isOpen && (
+        <div className="absolute right-0 mt-2 w-36 rounded-md shadow-lg bg-black/90 backdrop-blur-md ring-1 ring-[#00F0FF]/20">
+          <div className="py-1" role="menu" aria-orientation="vertical">
+            {languages.map(({ code, label }) => (
+              <button
+                key={code}
+                onClick={() => changeLanguage(code)}
+                className={`
+                  w-full text-left px-4 py-2 text-sm
+                  ${i18n.language === code 
+                    ? 'bg-[#00F0FF]/10 text-[#00F0FF]' 
+                    : 'text-gray-300 hover:bg-[#00F0FF]/10 hover:text-[#00F0FF]'
+                  }
+                  transition-colors
+                `}
+                role="menuitem"
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

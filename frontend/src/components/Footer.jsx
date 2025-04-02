@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaFacebook, FaInstagram, FaWhatsapp, FaTiktok } from 'react-icons/fa';
+import TermsOfServiceModal from './TermsOfServiceModal';
+import PrivacyPolicyModal from './PrivacyPolicyModal';
+import DMCAPolicyModal from './DMCAPolicyModal';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -8,6 +11,11 @@ const Footer = () => {
   const [connectionCount, setConnectionCount] = useState(237);
   const [isTyping, setIsTyping] = useState(false);
   const isMountedRef = useRef(true);
+  
+  // Estados para controlar a abertura dos modais
+  const [showTermsModal, setShowTermsModal] = useState(false);
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [showDMCAModal, setShowDMCAModal] = useState(false);
 
   // Atualizando os comandos para usar traduções
   const possibleCommands = [
@@ -168,11 +176,23 @@ const Footer = () => {
     </div>
   );
 
+  // Função para lidar com aceitação de termos e políticas
+  const handlePolicyAccept = (policyType) => {
+    console.log(`${policyType} aceito!`);
+    // Aqui você pode implementar lógica adicional como salvar em localStorage
+    
+    // Fechar o modal correspondente
+    if (policyType === 'terms') setShowTermsModal(false);
+    if (policyType === 'privacy') setShowPrivacyModal(false);
+    if (policyType === 'dmca') setShowDMCAModal(false);
+  };
+
   return (
     <div className="w-full h-full">
       <footer className="w-full h-fit bg-black text-white relative bottom-0">
         <div className="w-full mx-auto sm:px-10 px-4 pb-10">
-          <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 justify-items-start pt-12">
+          {/* Grid container com ajustes de centralização */}
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 justify-items-center pt-12">
             {/* Coluna 1 - Logo */}
             <div className="lg:w-full w-full mt-16 mb-8 lg:mb-0 flex flex-col items-center text-center">
               <div className="flex justify-center">
@@ -187,25 +207,77 @@ const Footer = () => {
               </p>
             </div>
             
-            {/* Coluna 2 - Itens do Multiverso */}
-            <div className="lg:w-full w-full">
-              <h2 className="text-white text-xl font-medium mb-5 border-l-2 border-cyan-400 pl-3">
-                {t('footer.multiverse.title')}
-              </h2>
-              
-              {multiverseItems.map(item => (
-                <MultiverseItem 
-                  key={item.id}
-                  imageUrl={item.imageUrl}
-                  title={item.title}
-                  date={item.date}
-                  category={item.category}
-                  colorClass={item.colorClass}
-                />
-              ))}
+            {/* Coluna 2 - Itens do Multiverso - Ajustada 15% para direita */}
+            <div className="lg:w-full w-full flex flex-col items-center">
+              <div className="w-full max-w-md lg:translate-x-[15%]">
+                <h2 className="text-white text-xl font-medium mb-5 border-l-2 border-cyan-400 pl-3">
+                  {t('footer.multiverse.title')}
+                </h2>
+                
+                {multiverseItems.map(item => (
+                  <MultiverseItem 
+                    key={item.id}
+                    imageUrl={item.imageUrl}
+                    title={item.title}
+                    date={item.date}
+                    category={item.category}
+                    colorClass={item.colorClass}
+                  />
+                ))}
+              </div>
             </div>
             
-            {/* Coluna 3 - Ícones Sociais e Terminal */}
+            {/* Coluna 3 - About Us - Agora centralizada */}
+            <div className="lg:w-full w-full flex flex-col items-center relative">
+  <div className="w-full max-w-md lg:translate-x-1/2">
+    <h2 className="text-white text-xl font-medium mb-5 border-l-2 border-[#00C1E8] pl-3">
+      About Us
+    </h2>
+    <ul className="space-y-3">
+      <li>
+        <button 
+          onClick={() => setShowTermsModal(true)} 
+          className="text-gray-300 hover:text-[#00C1E8] transition-colors duration-300 flex items-center"
+        >
+          <span className="w-1.5 h-1.5 bg-[#00C1E8] mr-2 rounded-full"></span>
+          Terms & Conditions
+        </button>
+      </li>
+                  <li>
+                    <button 
+                      onClick={() => setShowPrivacyModal(true)} 
+                      className="text-gray-300 hover:text-[#00C1E8] transition-colors duration-300 flex items-center"
+                    >
+                      <span className="w-1.5 h-1.5 bg-[#00C1E8] mr-2 rounded-full"></span>
+                      Privacy Policy
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                      onClick={() => setShowDMCAModal(true)} 
+                      className="text-gray-300 hover:text-[#00C1E8] transition-colors duration-300 flex items-center"
+                    >
+                      <span className="w-1.5 h-1.5 bg-[#00C1E8] mr-2 rounded-full"></span>
+                      DMCA Policy
+                    </button>
+                  </li>
+                  <li>
+                    <a href="/about" className="text-gray-300 hover:text-[#00C1E8] transition-colors duration-300 flex items-center">
+                      <span className="w-1.5 h-1.5 bg-[#00C1E8] mr-2 rounded-full"></span>
+                      Our Team
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/contact" className="text-gray-300 hover:text-[#00C1E8] transition-colors duration-300 flex items-center">
+                      <span className="w-1.5 h-1.5 bg-[#00C1E8] mr-2 rounded-full"></span>
+                      Contact Us
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Coluna 4 - Ícones Sociais e Terminal */}
             <div className="lg:w-full w-full flex flex-col items-center">
               {/* Ícones Sociais */}
               <div className="flex justify-center gap-4 mb-6 w-full">
@@ -276,13 +348,13 @@ const Footer = () => {
                   {terminalLines.length >= 4 && terminalLines.some(line => line.content === 'navigate') && (
                     <div className="terminal-destinations mt-2 ml-4">
                       <a href="#explorar" className="block text-amber-400 hover:underline hover:text-amber-300 mb-1 transition-colors">
-                        &gt; {t('footer.terminal.exploreWorlds')}
+                        &gt; {t('footer.terminal.navigation.explore')}
                       </a>
                       <a href="#criar" className="block text-cyan-400 hover:underline hover:text-cyan-300 mb-1 transition-colors">
-                        &gt; {t('footer.terminal.createUniverse')}
+                        &gt; {t('footer.terminal.navigation.create')}
                       </a>
                       <a href="#comunidade" className="block text-purple-400 hover:underline hover:text-purple-300 transition-colors">
-                        &gt; {t('footer.terminal.connectMinds')}
+                        &gt; {t('footer.terminal.navigation.connect')}
                       </a>
                     </div>
                   )}
@@ -321,6 +393,25 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+
+      {/* Modais de Termos e Políticas */}
+      <TermsOfServiceModal 
+        isOpen={showTermsModal}
+        onClose={() => setShowTermsModal(false)}
+        onAccept={() => handlePolicyAccept('terms')}
+      />
+      
+      <PrivacyPolicyModal 
+        isOpen={showPrivacyModal}
+        onClose={() => setShowPrivacyModal(false)}
+        onAccept={() => handlePolicyAccept('privacy')}
+      />
+      
+      <DMCAPolicyModal 
+        isOpen={showDMCAModal}
+        onClose={() => setShowDMCAModal(false)}
+        onAccept={() => handlePolicyAccept('dmca')}
+      />
     </div>
   );
 };

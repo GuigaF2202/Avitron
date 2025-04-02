@@ -6,9 +6,9 @@
       "3": "Evolução com adaptação e fusão.",
       "4": "Cidades escritas em códigos e memória eletrônica."
     },
-    "viewerInfo": "Explorando os limites entre tecnologia e humanidade em uma estética cyberpunk futurista.",
+    "viewerInfo": "Explorando os limites entre tecnologia e humanidade em uma estética AviTron Multiverse.",
     "navigation": "Use as setas ← → para navegar",
-    "title": "Galeria Cyberpunk",
+    "title": "Galeria AviTron Multiverse",
     "subtitle": "Explorando os limites entre tecnologia e humanidade através de imagens",
     "clickToExpand": "Clique para expandir"
   },
@@ -86,6 +86,13 @@
       "interested": "Interessado",
       "viewAll": "Ver todos os eventos"
     },
+    "newsletter": {
+      "title": "Mantenha-se Atualizado",
+      "description": "Acompanhe o AviTron Multiverse! Inscreva-se na nossa lista de e-mails para receber atualizações selecionadas e importantes.",
+      "emailLabel": "Endereço de e-mail",
+      "emailPlaceholder": "Digite seu e-mail",
+      "button": "Notifique-me"
+    },
     "news": {
       "title": "Notícias & Atualizações",
       "readMore": "Ler mais"
@@ -100,7 +107,7 @@
       "days": "dias"
     },
     "sectionUnderDevelopment": "Em Desenvolvimento",
-    "sectionComingSoon": "Esta seção estará disponível em breve. Estamos trabalhando para trazer novas funcionalidades para o Avitron Metaverse.",
+    "sectionComingSoon": "Esta seção estará disponível em breve. Estamos trabalhando para trazer novas funcionalidades para o Avitron Multiverse.",
     "backToHome": "Voltar para o Início"
   },
   "downloads": {
@@ -225,7 +232,9 @@
   },
   "homePage": {
     "scrollToGallery": "Rolar para Galeria",
-    "galleryTitle": "Galeria de Imagens"
+    "galleryTitle": "Galeria de Imagens",
+    "newsletterTitle" : "Mantenha-se Atualizado"
+
   },
   "language": {
     "en": "Inglês",
@@ -254,7 +263,7 @@
       "title": "Categorias"
     },
     "products": {
-      "avatar1": "Avatar Cyberpunk",
+      "avatar1": "Avatar AviTron Multiverse",
       "clothing1": "Traje Digital",
       "home1": "Casa Futurista"
     },
@@ -363,42 +372,67 @@
     "mainContent": "Conteúdo principal"
   },
   "pricing": {
-    "title": "Preços",
-    "headline": "Seja para você ou para toda sua equipe - nós temos a solução ideal.",
-    "subtitle": "Escolha o produto que melhor funciona para você",
-    "mostPopular": "Mais popular",
-    "orderNow": "Comprar Agora",
-    "products": {
-      "1": {
-        "name": "Produto Tipo 1",
-        "description": "Detalhes do Produto Tipo 1",
-        "price": "€ 10 / unidade",
-        "features": [
-          "40 unidades",
-          "1 recurso",
-          "Entrega rápida"
-        ]
+    "title": "Selecione seu Plano no Universo Virtual",
+    "headline": "Personalize sua experiência digital com nossas opções flexíveis de preços",
+    "premiumMembership": {
+      "title": "🌟 Assinatura Premium",
+      "benefits": {
+        "trons": "✅ 400 trons/semana (1600/mês)",
+        "island": "🌴 10.000 PRIMs ilha (65.536 m²)",
+        "support": "🛠️ Suporte VIP",
+        "perks": "🎁 Vantagens e bônus exclusivos"
       },
-      "2": {
-        "name": "Produto Tipo 2",
-        "description": "A escolha mais popular. Detalhes do Produto Tipo 2",
-        "price": "€ 20 / unidade",
-        "features": [
-          "120 unidades",
-          "3 recursos diferentes",
-          "Entrega rápida"
-        ]
+      "month": "mês"
+    },
+    "tronEconomy": {
+      "title": "Economia de Trons no Mundo Virtual",
+      "exchangeRate": "275 Trons = $1 USD",
+      "uses": "Usos: Comprar bens, alugar serviços, recompensar criadores, melhorar terrenos",
+      "premium": "Usuários premium recebem 400 trons por semana automaticamente (1600/mês)"
+    },
+    "buttons": {
+      "subscribe": "Assinar Agora",
+      "purchase": "Comprar",
+      "purchaseTrons": "Comprar Trons"
+    },
+    "islandUpgrades": {
+      "title": "🧱 Melhorias de Ilha",
+      "subtitle": "Complementos Mensais",
+      "columns": {
+        "tier": "Nível da Região",
+        "prims": "PRIMs Máximos",
+        "price": "Preço Mensal",
+        "action": "Ação"
       },
-      "3": {
-        "name": "Produto Tipo 3",
-        "description": "Detalhes do Produto Tipo 3",
-        "price": "€ 50 / unidade",
-        "features": [
-          "240 unidades",
-          "6 recursos diferentes",
-          "Entrega rápida"
-        ]
+      "tiers": {
+        "included": "Incluído",
+        "tier1": "Expansão Nível 1",
+        "tier2": "Expansão Nível 2",
+        "tier4x4": "Atualização para Região 4x4",
+        "includedWithPremium": "Incluído com Premium"
       }
-    }
+    },
+    "extraRegions": {
+      "title": "🪐 Regiões Extras",
+      "subtitle": "Adições Opcionais",
+      "types": {
+        "basic": "Ilha Básica",
+        "medium": "Ilha Média",
+        "large": "Ilha Grande",
+        "mega": "Mega Região 4x4"
+      }
+    },
+    "columns": {
+      "type": "Tipo de Región",
+      "prims": "PRIMs Máximos",
+      "price": "Precio Mensual",
+      "setupFee": "Tarifa de Configuración Única",
+      "action": "Acción"
+}  
+    },
+     "callToAction": {
+    "title": "Pronto para se Juntar ao Multiverso?",
+    "description": "Comece sua aventura digital hoje com nossa Assinatura Premium",
+    "button": "Comece Agora"
   }
 }
